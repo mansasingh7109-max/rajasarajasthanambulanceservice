@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "santramarketshoppingmall"
+  },
+  "targets": {
+    "santramarketshoppingmall": {
+      "hosting": {
+        "main": ["santramarketshoppingmall"],
+        "second": ["move-prac-7-10-11-won"],
+        "ambulance": ["rajasarajasthanambulanceservice"]
+      }
+    }
+  }
+}
