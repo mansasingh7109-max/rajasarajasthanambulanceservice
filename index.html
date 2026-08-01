@@ -29,7 +29,7 @@
     body{background:#f8f9fa;color:#333}
     header{background:#64B5F6;color:blue;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
     header h1{font-size:22px}
-    header nav a{color:white;text-decoration:none;margin-left:20px;font-weight:600}
+    header nav a{color:blue;text-decoration:none;margin-left:20px;font-weight:600}
     header nav a:hover{text-decoration:underline}
     .hero{background:linear-gradient(135deg,#e40046,#FFF176);color:white;text-align:center;padding:80px 20px}
     .hero h2{font-size:36px;margin-bottom:10px}
@@ -49,14 +49,15 @@
     
     </head>
 <body id="mainBody">
-  
+
 <header>
  <nav>
-     <b> RAJAS AMBULANCE SERVICE- 8003200377</b>
+     <b> RAJAS AMBULANCE SERVICE <div><b> 8003200377</b></b><a>9414463864</a></div>
+     <div>
     <a href="#">24</a>
     <a href="#">HOUR</a>
     <a href="#">AMBULANCE</a>
-    <a href="#">SERVICE</a>
+    <a href="#">SERVICE</a></div>
   </nav>
 </header>
 
@@ -64,24 +65,41 @@
 <section class="hero">
  <h1> RAJAS AMBULANCE RAJASTHAN SERVICE </h1>
   <nav>
-        <a href="#">
-    <script src="constants.js"></script>
+   <!-- ✅ FIXED - DONO NUMBER DIAL - OLD CODE SAVE -->
+<script src="constants.js"></script>
 <script src="secrets.js"></script>
 <script src="config.js"></script>
 <script src="admin-auth.js"></script>
-<script src="admin-call-system.js?v=1"></script> <!-- ✅ Calling System -->
+<script src="admin-call-system.js?v=1"></script>
 
-<!-- Har order card me mobile ko aise dikha — direct call button ayega -->
-<div class="order-card" data-mobile="8003200377" data-name="" data-orderid="SM123">
+<style>
+.order-card{margin:8px 0}
+.order-card button,.order-card a{font-family:'Poppins',sans-serif}
+</style>
 
-  <button onclick="directCallCustomer('8003200377','','SM123')" style="background:#10b981;color:white;padding:10px;border:none;border-radius:8px;width:100%;margin-top:6px">📞 Direct Call - RAJAS SERVICE: 8003200377 se</button>
-  <a href="tel:+918003200377" style="background:#3b82f6;color:white;padding:10px;border-radius:8px;display:block;text-align:center;text-decoration:none;margin-top:6px">📱 Phone Dialer Open
+<!-- ✅ FINAL - DONO KA EK-EK OPTION ONLY - 2 BUTTON -->
+<div style="padding:14px;background:linear-gradient(135deg,#ff0f5a 0%,#ff8c2a 100%);text-align:center">
+  <h1 style="color:white;font-size:18px;font-weight:800;margin-bottom:14px">RAJAS AMBULANCE RAJASTHAN SERVICE</h1>
   
+  <!-- Button 1 - 8003200377 - Single Option -->
+  <a href="tel:+918003200377" style="background:#10b981;color:white;padding:13px;border-radius:8px;display:block;text-align:center;text-decoration:none;font-weight:700;margin:8px 0;font-size:14px">
+    📞 Direct Call - 8003200377
   </a>
   
-</a>
+  <!-- Button 2 - 9414463864 - Single Option -->
+  <a href="tel:+919414463864" style="background:#2874f0;color:white;padding:13px;border-radius:8px;display:block;text-align:center;text-decoration:none;font-weight:700;margin:8px 0;font-size:14px">
+    📞 Direct Call - 9414463864
+  </a>
 </div>
 
+<script>
+function directCallCustomer(mobile){
+  mobile = (mobile||'').toString().replace(/\D/g,'').slice(-10);
+  window.location.href = 'tel:+91'+mobile;
+}
+console.log("✅ Fixed - 2 Buttons Only - 8003200377 + 9414463864");
+</script>
+<!-- ✅ END -->
 
 </section>
 
@@ -134,9 +152,9 @@
     <div id="mainFooter" style="background:#ffff99; color:#ff5e78; padding:15px; text-align:center; margin-top:20px; border-radius:8px; font-size:14px;">
         <p style="margin:5px 0;">ESTABLISED FROM 1948 YEAR <span id="footerCompanyName">RAJAS AMBULANCE SERVICE</span></p>
         <p style="margin:5px 0;" id="footerCustomText">Customer Care: +91 8003200377 | All Over RAJASTHAN INDIA AT ONLINE</p>
-          <p>CONTACT US , ESTABLISED FROM  1948 YEAR RAJAS AMBULANCE SERVICE</p> </span>
-    </div>
-
+          <p>CONTACT US , ESTABLISED FROM  1948 YEAR RAJAS AMBULANCE SERVICE</p> </span></div>
+       
+    
     <div style="text-align:center; margin:0px 0 0px 0;">
         <button onclick="openAdminLogin()" style="background:#E6E6FF;  color:Light Purple; border:none; padding:0px 0px; border-radius:0px; cursor:pointer; font-size:1px;">.</button>
     </div>
@@ -646,5 +664,6 @@ function shareProduct(id){
 }
 
 </script>
+
 </body>
 </html>
