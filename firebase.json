@@ -1,20 +1,31 @@
 {
-  "hosting": [
-    {
-      "target": "main",
-      "public": "mansasingh7109-max.github.io",
-      "ignore": ["firebase.json","**/.*","**/node_modules/**"]
-    },
-    {
-      "target": "second",
-      "public": "move-prac-7-10-11-won",
-      "ignore": ["firebase.json","**/.*","**/node_modules/**"]
-    },
-    {
-      "target": "ambulance",
-      "public": ".",
-      "ignore": ["firebase.json","**/.*","**/node_modules/**",".firebaserc",".github/**"],
-      "rewrites": [{"source": "**","destination": "/index.html"}]
-    }
-  ]
+  "hosting": {
+    "target": "ambulance",
+    "public": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", ".firebaserc", ".github/**"],
+    "headers": [
+      {
+        "source": "/sitemap.xml",
+        "headers": [{"key": "Content-Type", "value": "application/xml"}]
+      },
+      {
+        "source": "/robots.txt",
+        "headers": [{"key": "Content-Type", "value": "text/plain"}]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/sitemap.xml",
+        "destination": "/sitemap.xml"
+      },
+      {
+        "source": "/robots.txt",
+        "destination": "/robots.txt"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
 }
