@@ -1,0 +1,31 @@
+# Rajas Ambulance Service - V1 - .gitignore - Old Save
+
+# Secrets - Kabhi public mat karo
+.env
+.env.local
+secrets.js
+serviceAccountKey.json
+firebase-adminsdk-*.json
+
+# Build / Cache - Static site me jaruri nahi
+node_modules/
+.next/
+dist/
+.firebase/hosting.*
+firebase-debug.log
+firestore-debug.log
+
+# Santra Mall wali galat files - Is repo me nahi chahiye
+santra-all-url-one-file.js
+santra-master-image-urls.js
+santra-image-url-system.js
+santra-universal-image-sync.js
+cart.js
+mychoicesame.js
+mychoice.js
+share.js
+share-otp-verify.html
+
+# OS
+.DS_Store
+Thumbs.db
