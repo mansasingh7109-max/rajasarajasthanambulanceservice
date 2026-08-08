@@ -4,6 +4,6 @@ window.SANTRA = {
     CHOICE: "movePracChoice_v2",
   },
   ADMIN: {
-    WHATSAPP: "918769171078", // dusra number bhi daal sakta hai
+    WHATSAPP: "918003200377", // dusra number bhi daal sakta hai
   }
 };

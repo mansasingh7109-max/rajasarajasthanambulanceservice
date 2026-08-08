@@ -24,7 +24,7 @@ console.log("✅ constants.js - 2nd REPO - Firebase Domain - Old Code Save With 
 
 if (typeof CART_KEY === 'undefined') { var CART_KEY = "movePracCart_v2"; window.CART_KEY = CART_KEY; }
 if (typeof MYCHOICE_KEY === 'undefined') { var MYCHOICE_KEY = "movePracChoice_v2"; window.MYCHOICE_KEY = MYCHOICE_KEY; }
-if (typeof ADMIN_WHATSAPP === 'undefined') { var ADMIN_WHATSAPP = "918769171078"; window.ADMIN_WHATSAPP = ADMIN_WHATSAPP; }
+if (typeof ADMIN_WHATSAPP === 'undefined') { var ADMIN_WHATSAPP = "918003200377"; window.ADMIN_WHATSAPP = ADMIN_WHATSAPP; }
 
 if (typeof BASE_URL === 'undefined') { 
   // Auto-detect - GitHub Pages ho ya Firebase Hosting ho - dono pe chalega
