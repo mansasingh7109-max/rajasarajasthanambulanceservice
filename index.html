@@ -1,13 +1,14 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="google-site-verification" content="To-4Mxorze9cvYdtyf77BfPcJQcr_a2KihwooDC0Fxo" />
-  <title>Rajas Ambulance Service Jodhpur Rajasthan | 24 Hour Ambulance Service in Rajasthan | 8003200377 / 9414463864 - Since 1948 year</title>
-<meta name="description" content="Rajas Ambulance Service Jodhpur Rajasthan - 24 Hour Ambulance Service Jodhpur, Available All Over Rajasthan, Hospital Service Van. ICU, Oxygen, Doctor on Call. Call: 8003200377 / 9414463864. Since 1948.">
-<meta name="keywords" content="Rajas Rajasthan Ambulance Service, Rajasthan Ambulance Service, 24 Hour Ambulance Available, Ambulance Rajasthan, Hospital Service Van">
+<meta name="google-site-verification" content="To-4Mxorze9cvYdtyf77BfPcJQcr_a2KihwooDC0Fxo" />
+<title>Rajas Rajasthan Ambulance Service - Since 1948 - 24 Hour Ambulance Available - Omni Van - Hospital Pickup Service - 8003200377 / 9414463864</title>
+<meta name="description" content="Rajas Rajasthan Ambulance Service - Since 1948 - 50000+ families trust - Service Details: 24 Hour Ambulance Available, Omni Van, Hospital Pickup Service, Hospital Service Van, ICU Ventilator, Oxygen Cylinder, Doctor on Call, Hospital Airport Railway Pickup, Jodhpur to All Rajasthan 24 Hour, All Over Rajasthan India At Online - Contact 8003200377 / 9414463864 - Fast, clean, affordable, 24x7">
+<meta name="keywords" content="Rajas Rajasthan Ambulance Service, Rajasthan Ambulance Service, Rajas Ambulance Service Jodhpur Rajasthan, 24 Hour Ambulance Available, Omni Van, Hospital Pickup Service, Hospital Service Van, Ambulance Rajasthan, Jodhpur to All Rajasthan 24 Hour, All Over Rajasthan India At Online, 8003200377, 9414463864, ICU Ventilator, Oxygen Cylinder, Doctor on Call, Hospital Airport Railway Pickup">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://rajasarajasthanambulanceservice.web.app/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lobster&family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
  <style>
@@ -737,6 +738,63 @@ function shareProduct(id){
   if(!window.RAJAS_AMBULANCE_CONFIG){
     console.log("Running with example config");
   }
+</script>
+<!-- V34 FINAL - Rajas Ambulance Call Data Save - Old Save + Update - Firebase me -->
+<script>
+// Call / WhatsApp data Firebase me save - SantraJet + Rajas dono ke liye
+function saveRajasCallData(type, number) {
+  try {
+    var data = {
+      type: type, // 'call' ya 'whatsapp'
+      number: number,
+      website: 'rajasarajasthanambulanceservice.web.app',
+      page: location.href,
+      mobile: localStorage.getItem('santra_mobile') || 'guest',
+      timestamp: Date.now(),
+      dateStr: new Date().toLocaleString('en-IN'),
+      service: '24 HOUR AMBULANCE SERVICE - Jodhpur to All Rajasthan'
+    };
+    
+    // Firestore me save - rajas_bookings me
+    if(window.db) {
+      window.db.collection('rajas_bookings').add({
+        ...data,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      // Extra backup - ambulance_bookings me bhi
+      window.db.collection('ambulance_bookings').add({
+        ...data,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    }
+    
+    // Realtime me bhi save - Fast running
+    if(window.rtdb) {
+      window.rtdb.ref('rajas_bookings').push(data);
+      window.rtdb.ref('ambulance_bookings').push(data);
+    }
+    
+    console.log('✅ Rajas Call Saved:', type, number);
+  } catch(e) {
+    console.log('Call save error', e);
+  }
+}
+
+// Auto attach to all Call / WhatsApp buttons - Rajas site pe
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="tel:"], button').forEach(function(btn) {
+    var text = btn.innerText || '';
+    if(text.includes('8003200377')) {
+      btn.addEventListener('click', function() { saveRajasCallData('call', '8003200377'); });
+    }
+    if(text.includes('9414463864')) {
+      btn.addEventListener('click', function() { saveRajasCallData('call', '9414463864'); });
+    }
+    if(text.includes('WhatsApp')) {
+      btn.addEventListener('click', function() { saveRajasCallData('whatsapp', '8003200377'); });
+    }
+  });
+});
 </script>
 </body>
 </html>
